@@ -92,3 +92,15 @@ for ((i=1;i<=22;i++)); do
   ./qgen -v -c -s 3000 ${i} > /tmp/sf3000/tpch-q${i}.sql
 done
 ```
+
+Execute the following sqls in your database
+```sql
+\copy customer from '/home/ubuntu/tpch-kit/dbgen/customer.tbl' with delimiter as '|' NULL '';
+\copy lineitem from '/home/ubuntu/tpch-kit/dbgen/lineitem.tbl' with delimiter as '|' NULL '';
+\copy nation from '/home/ubuntu/tpch-kit/dbgen/nation.tbl' with delimiter as '|' NULL '';
+\copy orders from '/home/ubuntu/tpch-kit/dbgen/orders.tbl' with delimiter as '|' NULL '';
+\copy part from '/home/ubuntu/tpch-kit/dbgen/part.tbl' with delimiter as '|' NULL '';
+\copy partsupp from '/home/ubuntu/tpch-kit/dbgen/partsupp.tbl' with delimiter as '|' NULL '';
+\copy region from '/home/ubuntu/tpch-kit/dbgen/region.tbl' with delimiter as '|' NULL '';
+\copy supplier from '/home/ubuntu/tpch-kit/dbgen/supplier.tbl' with delimiter as '|' NULL '';
+```
